@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011 The CyanogenMod Project
+# Copyright (C) 2011 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,13 +14,5 @@
 # limitations under the License.
 #
 
-## (2) Also get non-open-source specific aspects if available
-$(call inherit-product-if-exists, vendor/samsung/d2r530/d2r530-vendor.mk)
-
-## overlays
-DEVICE_PACKAGE_OVERLAYS += device/samsung/d2usc/overlay
-## common overlays
-DEVICE_PACKAGE_OVERLAYS += device/samsung/d2-common/overlay
-
-# Inherit from d2-common
-$(call inherit-product, device/samsung/d2-common/d2-common.mk)
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/full_d2spr.mk
